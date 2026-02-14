@@ -1,0 +1,294 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* "size 10" interpreted as 10rem for prominence */
+.title {
+  font-size: 8rem;
+  /* Reduced slightly to fit better with steps */
+  line-height: 1.1;
+  margin: 0;
+  font-weight: 700;
+  color: #646cff;
+  /* Vite purple or use white/black depending on theme */
+  transition: font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
+.upload-section,
+.job-selection-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  width: 100%;
+  max-width: 800px;
+  align-items: center;
+}
+
+.upload-label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.file-input {
+  padding: 0.5rem;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  max-width: 400px;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.success-message {
+  color: #4dff4d;
+}
+
+.loading-message {
+  color: #646cff;
+  font-weight: bold;
+}
+
+/* Buttons */
+.primary-button {
+  background-color: #646cff;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+  background-color: #535bf2;
+}
+
+.primary-button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.secondary-button {
+  background-color: transparent;
+  border: 1px solid #646cff;
+  color: #646cff;
+  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondary-button:hover {
+  background-color: rgba(100, 108, 255, 0.1);
+}
+
+.secondary-button.small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+/* Job Selection Grid */
+.job-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.job-card {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #eee;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+  min-width: 150px;
+  flex: 1 0 21%;
+  /* Approx 4 per row */
+}
+
+.job-card:hover {
+  border-color: #646cff;
+  transform: translateY(-2px);
+}
+
+.job-card.selected {
+  background-color: #646cff;
+  color: white;
+  border-color: #646cff;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(100, 108, 255, 0.5);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Analysis Section */
+.analysis-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.analyzing-state {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-top: 2rem;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+/* Analysis Result Styles (Existing + Tweaks) */
+.analysis-result {
+  padding: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  border: 1px solid #333;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(#646cff 0% 85%, #444 85% 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.score-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.score-label {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.section h3 {
+  border-bottom: 2px solid #646cff;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background-color: #646cff;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.suggestions ul {
+  padding-left: 1.5rem;
+}
+
+.suggestions li {
+  margin-bottom: 0.5rem;
+}
+
+
+@media (prefers-color-scheme: light) {
+  .title {
+    color: #213547;
+  }
+
+  .upload-section,
+  .job-selection-section,
+  .analysis-result {
+    background-color: #f9f9f9;
+    border-color: #ddd;
+  }
+
+  .file-input {
+    background-color: #fff;
+    color: #000;
+    border-color: #ccc;
+  }
+
+  .job-card {
+    background-color: #fff;
+    color: #333;
+    border-color: #ccc;
+  }
+
+  .job-card:hover {
+    border-color: #646cff;
+  }
+
+  .job-card.selected {
+    color: #fff;
+    background-color: #646cff;
+  }
+
+  .score-label {
+    color: #eee;
+  }
+}
